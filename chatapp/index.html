@@ -12,7 +12,7 @@
         </form>
     </div>
     <script>
-        var ws = new WebSocket("ws://localhost:8888/websocket");
+        var ws = new WebSocket("ws://barryhmolina.com/websocket");
         var username = prompt("What's your name?");
         
         function sendMessage() {
@@ -29,7 +29,7 @@
         ws.onmessage = function(evt) {
             var messageDict = JSON.parse(evt.data);
             var messageBox = document.createElement("div");
-            messageBox.innerHTML = messageDict.user + ": " + messageDict.message;
+            messageBox.textContent = messageDict.user + ": " + messageDict.message;
             document.getElementById("messages").appendChild(messageBox);
         }
     </script>
