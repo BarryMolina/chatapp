@@ -22,6 +22,7 @@ def make_app():
     return tornado.web.Application([
         (r"/", MainHandler),
         (r"/websocket", SimpleWebSocket),
+        websocket_ping_interval=10
     ])
 
 def main():
