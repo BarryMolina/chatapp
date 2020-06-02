@@ -29,7 +29,7 @@
         ws.onmessage = function(evt) {
             var messageDict = JSON.parse(evt.data);
             var messageBox = document.createElement("div");
-            messageBox.innerHTML = messageDict.user + ": " + messageDict.message;
+            messageBox.textContent = messageDict.user + ": " + messageDict.message;
             document.getElementById("messages").appendChild(messageBox);
         }
     </script>
